@@ -1,0 +1,7 @@
+{
+  "name": "redux-saga-model-tutorial",
+  "version": "0.0.1",
+  "description": "redux-saga-model 文档",
+  "main": "index.js",
+  "license": "MIT"
+}
