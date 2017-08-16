@@ -112,7 +112,7 @@ reducers: {
 
 ### clear
 
-我们经常会碰到需要对 state 进行重置或情况，这里建议提供一个 clear-reducer。
+我们经常会碰到需要对 state 进行重置或清理的情况，这里建议提供一个 clear-reducer。
 
 
 
@@ -160,7 +160,7 @@ export const getUsers = ()=>{
 
 每个 model 的 saga 的启动时机有两点不同
 
-1. 初始化 sagaModel 的时候入参 models，或则实例化后通过 sagaModel.register( model )注册 model，
+1. 初始化 sagaModel 的时候入参 models，或者实例化后通过 sagaModel.register( model )注册 model，
 
    这些注册的 models 在调用 sagaModel.store() 时启动。
 
