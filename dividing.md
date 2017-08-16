@@ -285,7 +285,6 @@ export const getUsers = ()=>{
     payload:{},
   }
 }
-
 ```
 
-自此，我们的案例就基本完成。这里看完整实例。
+自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model/tree/master/example/users)看完整实例。
