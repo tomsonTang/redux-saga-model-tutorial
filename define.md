@@ -1,5 +1,17 @@
 # model 的定义
 
+```javascript
+
+export default {
+  namespace:"users/db",
+  state: {},
+  reducers: {},
+  sagas: {}
+};
+```
+
+
+
 ## namespace
 
 对整个 App 的 state-tree 进行良好的划分，每个 model 应该输出一个唯一的 namespace。
