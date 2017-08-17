@@ -5,7 +5,8 @@
 目录：
 
 1. [如何定义一个 model](https://github.com/tomsonTang/redux-saga-model-tutorial/blob/master/define.md)
-2. [如何划分 model](https://github.com/tomsonTang/redux-saga-model-tutorial/blob/master/dividing.md)
+2. [如何对 model 进行划分](https://github.com/tomsonTang/redux-saga-model-tutorial/blob/master/dividing.md)
+3. [在线案例](https://tomsontang.github.io/redux-saga-model-tutorial/users-demo/build/index.html)
 
 
 

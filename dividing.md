@@ -17,7 +17,7 @@
 
 接下来我们通过一个实例来了解如何去划分 dataModel 与 viewModel：
 
-![](https://raw.githubusercontent.com/tomsonTang/redux-saga-model/master/assets/a.png)
+![](https://raw.githubusercontent.com/tomsonTang/redux-saga-model-tutorial/master/assets/a.png)
 
 从截图中我们可以看出该应用场景非常常见，用户的增删改查功能
 
@@ -287,4 +287,8 @@ export const getUsers = ()=>{
 }
 ```
 
-自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model/tree/master/example/users)看完整实例。
+自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model-tutorial/tree/master/docs/users-demo)看完整实例代码，[在线案例](https://tomsontang.github.io/redux-saga-model-tutorial/users-demo/build/index.html)。
+
+建议预先在 chrome 中安装 [redux-devtools](https://github.com/zalmoxisus/redux-devtools-extension) 插件，然打开开发者工具选择 reudx 窗口,效果如下:
+
+![](https://raw.githubusercontent.com/tomsonTang/redux-saga-model-tutorial/master/assets/b.jpg)
