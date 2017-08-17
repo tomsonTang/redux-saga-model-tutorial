@@ -152,7 +152,7 @@ var config = {
       'process.env.PREFIX_URL': JSON.stringify(cwdPackageJsonConfig.prefixURL),
       // 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       // build 的时候底层设置了 process.env.NODE_ENV = production 但是这个项目不需要
-      'process.env.NODE_ENV': 'development',
+      'process.env.NODE_ENV': JSON.stringify('development'),
       'process.env.useImmutable': JSON.stringify(useImmutable)
     }),
     // This helps ensure the builds are consistent if source hasn't changed:
