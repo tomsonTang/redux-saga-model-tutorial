@@ -11,6 +11,9 @@ const sagaModel = new SagaModel({
   initialModels:[...usersModels],
 });
 
+// 设置打开 redux-devtools
+sagaModel.openReduxDevtool();
+
 ReactDOM.render(
   <Provider store={sagaModel.store()}>
     <Layout>

@@ -9,8 +9,6 @@ const util = require('react-boilerplate-app-utils');
 const scriptsPackagename = 'react-boilerplate-app-scripts';
 const paths = require(util.pathResolve('config/paths.js', scriptsPackagename));
 
-process.env.NODE_ENV = 'development';
-
 //bebin-----------packageJson信息获取
 const packageJson = util.getCwdPackageJson();
 function getInfo(packageId) {
@@ -152,8 +150,6 @@ var config = {
     }),
     new webpack.DefinePlugin({
       'process.env.PREFIX_URL': JSON.stringify(cwdPackageJsonConfig.prefixURL),
-      // 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      // build 的时候底层设置了 process.env.NODE_ENV = production 但是这个项目不需要
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.useImmutable': JSON.stringify(useImmutable)
     }),
