@@ -8,10 +8,6 @@ const util = require('react-boilerplate-app-utils');
 const scriptsPackagename = 'react-boilerplate-app-scripts';
 const paths = require(util.pathResolve('config/paths.js', scriptsPackagename));
 
-console.log('====================================');
-console.log(paths);
-console.log('====================================');
-
 //bebin-----------packageJson信息获取
 const packageJson = util.getCwdPackageJson();
 function getInfo(packageId) {
