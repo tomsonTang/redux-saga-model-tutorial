@@ -287,7 +287,11 @@ export const getUsers = ()=>{
 }
 ```
 
-自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model-tutorial/tree/master/docs/users-demo)看完整实例代码，[在线案例](https://tomsontang.github.io/redux-saga-model-tutorial/users-demo/build/index.html)。
+自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model-tutorial/tree/master/docs/users-demo) 看完整实例代码。
+
+## 在线
+
+[在线案例](https://tomsontang.github.io/redux-saga-model-tutorial/users-demo/build/index.html)
 
 建议预先在 chrome 中安装 [redux-devtools](https://github.com/zalmoxisus/redux-devtools-extension) 插件，然打开开发者工具选择 reudx 窗口,效果如下:
 
