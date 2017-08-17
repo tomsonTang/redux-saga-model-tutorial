@@ -9,10 +9,6 @@ const util = require('react-boilerplate-app-utils');
 const scriptsPackagename = 'react-boilerplate-app-scripts';
 const paths = require(util.pathResolve('config/paths.js', scriptsPackagename));
 
-console.log('====================================');
-console.log(paths);
-console.log('====================================');
-
 //bebin-----------packageJson信息获取
 const packageJson = util.getCwdPackageJson();
 function getInfo(packageId) {
@@ -66,7 +62,7 @@ var config = {
     //内存和打包静态文件访问目录，以index.html为准,最好以斜杠/结尾，要不有意想不到的bug
     //因为有些网站访问web app不是在根目录，可能是根目录中的的文件夹，prefixURL是用来设置这种情况的
     //例如`/demo`，访问网站根目录demo文件中的web app
-    publicPath: `${cwdPackageJsonConfig.prefixURL}` || '/',
+    publicPath:'./',
     //定义require.ensure文件名
     chunkFilename: 'static/js/[name]-[id]-[chunkHash].chunk.js',
     libraryTarget: 'var',
@@ -154,7 +150,9 @@ var config = {
     }),
     new webpack.DefinePlugin({
       'process.env.PREFIX_URL': JSON.stringify(cwdPackageJsonConfig.prefixURL),
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      // 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      // build 的时候底层设置了 process.env.NODE_ENV = production 但是这个项目不需要
+      'process.env.NODE_ENV': 'development',
       'process.env.useImmutable': JSON.stringify(useImmutable)
     }),
     // This helps ensure the builds are consistent if source hasn't changed:
