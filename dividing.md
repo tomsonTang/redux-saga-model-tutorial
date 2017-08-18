@@ -287,6 +287,7 @@ export const getUsers = ()=>{
 }
 ```
 
+<<<<<<< Updated upstream
 自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model-tutorial/tree/master/docs/users-demo) 看完整实例代码。
 
 ## 在线
@@ -294,5 +295,10 @@ export const getUsers = ()=>{
 [在线案例](https://tomsontang.github.io/redux-saga-model-tutorial/users-demo/build/index.html)
 
 建议预先在 chrome 中安装 [redux-devtools](https://github.com/zalmoxisus/redux-devtools-extension) 插件，然打开开发者工具选择 reudx 窗口,效果如下:
+=======
+自此，我们的案例就基本完成。[这里](https://github.com/tomsonTang/redux-saga-model-tutorial/tree/master/docs/users-demo) 看完整实例代码，[在线案例](https://tomsontang.github.io/redux-saga-model-tutorial/users-demo/build/index.html)。
+
+建议预先在 chrome 上先安装 redux-devtools 插件，然后在开发者工具处打开 redux 窗口，效果如下：
+>>>>>>> Stashed changes
 
 ![](https://raw.githubusercontent.com/tomsonTang/redux-saga-model-tutorial/master/assets/b.jpg)
