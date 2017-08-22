@@ -6,7 +6,8 @@ export default {
   namespace:"users/db",
   state: {},
   reducers: {},
-  sagas: {}
+  sagas: {},
+  subscriptions:{}
 };
 ```
 
@@ -179,3 +180,49 @@ export const getUsers = ()=>{
 ### 异常
 
 在 saga 中执行副作用时需要充分考虑到副作用是否会抛出异常，并及时接收，根据需要停止副作用的执行。
+
+
+
+## subscriptions
+
+有时候存在着一些场景，譬如：当不需要与用户交互而产生一些副作用时，定时像后端抓取数据更新等等。
+
+这个时候可以在 model 中定义 subscriptions
+
+有两种使用方式
+
+方式一 model.subscriptions 作为一个方法
+
+```javascript
+{
+  namespace:'',
+  state:{},
+  reducers:{},
+  sagas:{},
+  subscriptions:function(dispatch,history){
+    history.listen((location) => {
+      //...
+    })
+  }
+}
+```
+
+方式二 model.subscriptions 作为一个对象，即方法集。
+
+```javascript
+{
+  namespace:'',
+  state:{},
+  reducers:{},
+  sagas:{},
+  subscriptions:{
+    changeData:function(dispatch,history){
+       history.listen((location) => {
+         //...
+       })
+    }
+  }
+}
+```
+
+每个 subscription 都会在 当前 model 被启动后运行。
