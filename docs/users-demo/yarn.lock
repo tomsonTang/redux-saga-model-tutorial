@@ -2636,6 +2636,12 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+flux-standard-action@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/flux-standard-action/-/flux-standard-action-1.2.0.tgz#d2d41612dde4cebddd11a76cfead8e84fc69ebdc"
+  dependencies:
+    lodash "^4.0.0"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -5081,7 +5087,7 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
-react-redux@^5.0.5, react-redux@^5.0.6:
+react-redux@^5.0.6:
   version "5.0.6"
   resolved "https://registry.npmjs.org/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
   dependencies:
@@ -5238,9 +5244,15 @@ redux-devtools@^3.4.0:
     prop-types "^15.5.7"
     redux-devtools-instrument "^1.0.1"
 
-redux-saga-model@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/redux-saga-model/-/redux-saga-model-0.1.3.tgz#ba5f59ed8148f1d8f2a39d332fde7f74cd525f44"
+redux-saga-model-loading@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/redux-saga-model-loading/-/redux-saga-model-loading-0.0.3.tgz#d3a94cafd8b6d9ff553727ad81401a784586e7e5"
+  dependencies:
+    flux-standard-action "^1.2.0"
+
+redux-saga-model@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/redux-saga-model/-/redux-saga-model-0.1.4.tgz#76d0a258558a986ea30c5ab1f20a6bf0fefb6fb2"
   dependencies:
     flatten "^1.0.2"
     global "^4.3.2"
@@ -5248,7 +5260,6 @@ redux-saga-model@^0.1.3:
     is-plain-object "^2.0.3"
     isomorphic-fetch "^2.2.1"
     lodash.isfunction "^3.0.8"
-    react-redux "^5.0.5"
     redux "^3.6.0"
     redux-saga "^0.15.3"
     warning "^3.0.0"
