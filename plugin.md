@@ -110,3 +110,7 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, mapDispatchToProps)(EditableTable);
 ```
 
+![](https://raw.githubusercontent.com/tomsonTang/redux-saga-model-tutorial/master/assets/loading.png)
+
+
+
