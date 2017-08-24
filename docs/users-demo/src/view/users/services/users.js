@@ -1,6 +1,6 @@
 import fetch from "isomorphic-fetch";
 
-const fakingURL = "http://jsonplaceholder.typicode.com";
+const fakingURL = "https://jsonplaceholder.typicode.com";
 const getAllUsers = `${fakingURL}/users`;
 
 function toJSON(fetchP) {
@@ -27,6 +27,4 @@ function parseJSON(response) {
   return response.json();
 }
 
-export const getUsers = () => toJSON(fetch(getAllUsers,{
-  credentials: 'include'
-}));
+export const getUsers = () => toJSON(fetch(getAllUsers));
