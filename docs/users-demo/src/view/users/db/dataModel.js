@@ -1,38 +1,5 @@
 import { delay } from "redux-saga";
-
-const defaultUsers = [
-  {
-    key: "0",
-    name: "lulu",
-    age: "18",
-    address: "London No. 1 Lake Park",
-  },
-  {
-    key: "1",
-    name: "lala",
-    age: "28",
-    address: "New York No. 1 Lake Park",
-  },
-  {
-    key: "2",
-    name: "Jim Green",
-    age: "23",
-    address: "New York No. 1 Lake Park",
-  },
-  {
-    key: "3",
-    name: "John Brown",
-    age: "22",
-    address: "London No. 1 Lake Park",
-  },
-  {
-    key: "4",
-    name: "Joe Black",
-    age: "38",
-    address: "Sidney No. 1 Lake Park",
-  }
-
-];
+import * as userServices from "../services/users.js";
 
 function filterAndUpdateList(list, payload) {
   return list.map(user => {
@@ -48,69 +15,76 @@ function filterAndUpdateList(list, payload) {
 
 const namespace = "users/db";
 
-export {
-  namespace
-}
+export { namespace };
 
 export default {
   namespace,
   state: {
     list: [],
+    maxKey: 0,
     count: 0
   },
   reducers: {
     updateOne({ list }, { payload }) {
       return {
-        list: filterAndUpdateList(list, {
-          key: payload.key,
-          name: payload.name,
-          age: payload.age,
-          address: payload.address
-        })
+        list: filterAndUpdateList(list, payload)
       };
     },
     delectOne({ list }, { payload }) {
-
-      const index = list.findIndex((user)=>{
+      const index = list.findIndex(user => {
         return user.key === payload.key;
       });
 
+      const newList = [...list.slice(0, index), ...list.slice(index + 1)];
+
       return {
-        list: [...list.slice(0,index),...list.slice(index+1)],
-        count: list.length - 1
+        list: newList,
+        count: list.length - 1,
+        maxKey: newList[newList.length - 1].key
       };
     },
-    addOne({ list }, { payload }) {
+    addOne({ list, maxKey }, { payload }) {
+      maxKey++;
+
       return {
         list: [
           ...list,
           {
-            key: list.length + 1,
-            name: payload.name,
-            age: payload.age,
-            address: payload.address,
+            ...payload,
+            key: maxKey
           }
         ],
-        count: list.length + 1
+        count: list.length + 1,
+        maxKey
       };
     },
-    addBatch({ list }, { payload }) {
+    addBatch({ list: stateList }, { payload: { list } }) {
       return {
-        list: [...list, ...payload.list],
-        count: list.length + payload.list.length
+        list: [...stateList, ...list],
+        count: stateList.length + list.length,
+        maxKey: list[list.length - 1].key
       };
     },
     clearAll({ list }, { payload }) {
-      return { list: [],count:0 };
+      return { list: [], count: 0, maxKey: 0 };
     }
   },
   sagas: {
     *getUsers({ payload }, effects) {
-      yield delay(1000);
+      // 从 services 获取数据
+      const users = (yield userServices.getUsers()).map(user => {
+        return {
+          name: user.name,
+          phone: user.phone,
+          website: user.website,
+          key: user.id
+        };
+      });
+
       yield effects.put({
         type: "addBatch",
         payload: {
-          list: defaultUsers
+          list: users
         }
       });
     },
@@ -119,7 +93,7 @@ export default {
       // 查看是否存在该用户
       const hasUser = yield effects.select((state, key) => {
         return state[this.namespace].list.some(user => {
-          return (user.key === key);
+          return user.key === key;
         });
       }, payload.key);
 
@@ -133,7 +107,7 @@ export default {
       // 查看是否存在该用户
       const hasUser = yield effects.select((state, key) => {
         return state[this.namespace].list.some(user => {
-          return (user.key === key);
+          return user.key === key;
         });
       }, payload.key);
 
@@ -153,7 +127,7 @@ export default {
       // 查看是否存在该用户
       const hasUser = yield effects.select((state, key) => {
         return state[this.namespace].list.some(user => {
-          return (user.key === key);
+          return user.key === key;
         });
       }, payload.key);
 
