@@ -103,7 +103,10 @@ const mapStateToProps = state => {
     dataSource: usersState.list,
     count: usersState.count,
     // 获取对应 namespace 下的 loading 状态
-    loading:state.loading.models[dbNamespace]
+    // 当该 namespace 中有任意一个 saga 处于 loading 状态时其为 true 否则为 false
+    allDone:state.loading.models[dbNamespace]，
+    // 获取对应 namespace 下的指定 saga 的 loading 状态
+    loading:state.loading.models[`${dbNamespace}/getUsers`]
   };
 };
 
