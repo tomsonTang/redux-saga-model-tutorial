@@ -1,8 +1,8 @@
 import React from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 import './index.css';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 export default ({children})=>{
   return (

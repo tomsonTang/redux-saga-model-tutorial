@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Input, Icon, Button, Popconfirm } from "antd";
+import { Table, Button, Popconfirm } from "antd";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import EditableCell from "../EditableCell/index.jsx";

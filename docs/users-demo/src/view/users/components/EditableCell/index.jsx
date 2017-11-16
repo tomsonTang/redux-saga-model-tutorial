@@ -1,5 +1,5 @@
 import React from "react";
-import {Table, Input, Icon, Button, Popconfirm} from "antd";
+import { Input, Icon} from "antd";
 
 class EditableCell extends React.Component {
   state = {
