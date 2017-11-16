@@ -48,14 +48,14 @@ ReactDOM.render(
 第二步： 告诉插件什么时候开启 loading
 
 ```javascript
-import {LOADING} from 'redux-saga-model-loading'
+import {LOADING,META} from 'redux-saga-model-loading'
 
 export const getUsers = ()=>{
   return {
     type:'users/db/getUsers',
     payload:{},
     //告诉插件为 users/db/getUsers 这个副作用开启 loading
-    meta:{ [LOADING]:true }
+    meta:META
   }
 }
 ```
